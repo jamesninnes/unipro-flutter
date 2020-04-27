@@ -18,8 +18,10 @@ class NavigationDrawer extends StatelessWidget {
       child: Column(
         children: <Widget>[
           NavigationDrawerHeader(),
-          DrawerItem('Episodes', Icons.videocam),
-          DrawerItem('About', Icons.help),
+          DrawerItem('File', Icons.text_fields),
+          DrawerItem('Game', Icons.games),
+          DrawerItem('Flashcard', Icons.lightbulb_outline),
+          DrawerItem('Views', Icons.looks),
         ],
       ),
     );

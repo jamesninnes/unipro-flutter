@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:unipro/constants/app_colors.dart';
+import 'package:unipro/views/landing/landing_view.dart';
 
 class CallToActionMobile extends StatelessWidget {
   final String title;
@@ -7,7 +10,11 @@ class CallToActionMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return FlatButton(
+      onPressed: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => LandingView()));
+      },
+      child: Container(
       height: 60,
       alignment: Alignment.center,
       child: Text(
@@ -22,6 +29,6 @@ class CallToActionMobile extends StatelessWidget {
         color: primaryColor,
         borderRadius: BorderRadius.circular(5),
       ),
-    );
+    ));
   }
 }
