@@ -3,7 +3,6 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:unipro/views/home/home_content_desktop.dart';
 import 'package:unipro/views/home/home_content_mobile.dart';
 import 'package:unipro/widgets/centered_view/centered_view.dart';
-import 'package:unipro/widgets/navigation_bar/navigation_bar.dart';
 import 'package:unipro/widgets/navigation_drawer/navigation_drawer.dart';
 
 class HomeView extends StatelessWidget {
@@ -21,7 +20,7 @@ class HomeView extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Expanded(
-                child: ScreenTypeLayout(
+                  child: ScreenTypeLayout(
                 mobile: HomeContentMobile(),
                 desktop: HomeContentDesktop(),
               ))

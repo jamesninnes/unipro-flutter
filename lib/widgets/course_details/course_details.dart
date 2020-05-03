@@ -11,7 +11,7 @@ class CourseDetails extends StatelessWidget {
         var textAlignment =
             sizingInformation.deviceScreenType == DeviceScreenType.Desktop
                 ? TextAlign.center
-                : TextAlign.center;
+                : TextAlign.left;
         double titleSize =
             sizingInformation.deviceScreenType == DeviceScreenType.Mobile
                 ? 50
@@ -40,7 +40,7 @@ class CourseDetails extends StatelessWidget {
                 height: 30,
               ),
               Text(
-                'Make flashcards in seconds, study with games for hours.\n\nHighlight text using quick flash to instantaneously create flashcards; and share worldwide. With the only comprehensive study progra',
+                'Make flashcards in seconds, study with games for hours.\n\nHighlight text using quick flash to instantaneously create flashcards; and share worldwide. With the only comprehensive study program.',
                 style: TextStyle(
                   fontSize: descriptionSize,
                   height: 1.7,
