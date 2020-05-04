@@ -33,7 +33,7 @@ class _LoginState extends State<LoginView> {
 
       // If the user object is returned from firebase - user is logged in and navigates to dashboard
       if (user != null) {
-        Navigator.of(context).pushNamed(GalleryView.route);
+        Navigator.of(context).pushReplacementNamed(GalleryView.route);
       } else {
         setState(() {
           _isLoading = false;

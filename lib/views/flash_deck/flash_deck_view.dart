@@ -11,9 +11,11 @@ class FlashDeckView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          automaticallyImplyLeading: true,
-          backgroundColor: primaryColor,
-          title: Text("UNIPRO")),
+        automaticallyImplyLeading: true,
+        backgroundColor: primaryColor,
+        title: Text("UNIPRO"),
+        actions: <Widget>[Icon(Icons.add), Icon(Icons.edit)],
+      ),
       backgroundColor: Colors.white,
       body: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
