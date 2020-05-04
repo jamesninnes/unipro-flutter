@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -12,11 +13,12 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <link rel="shortcut icon" type="image/png" href="favicon.png" />
 
   <title>unipro</title>
   <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
@@ -28,6 +30,27 @@
       });
     }
   </script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+  <!-- ADD THIS BEFORE YOUR main.dart.js SCRIPT -->
+  <script>
+    // TODO: Replace the following with your app's Firebase project configuration.
+    // See: https://support.google.com/firebase/answer/7015592
+    var firebaseConfig = {
+      apiKey: "AIzaSyAidkoTWlMEzn4r4gPYibOswP0ZvGeHckQ",
+      authDomain: "unipro-dev.firebaseapp.com",
+      databaseURL: "https://unipro-dev.firebaseio.com",
+      projectId: "unipro-dev",
+      storageBucket: "unipro-dev.appspot.com",
+      messagingSenderId: "1031796907939",
+      appId: "1:1031796907939:web:a42d592e7a9979f815c416"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <!-- END OF FIREBASE INIT CODE -->
+  <!-- Dart App -->
   <script src="main.dart.js" type="application/javascript"></script>
 </body>
+
 </html>

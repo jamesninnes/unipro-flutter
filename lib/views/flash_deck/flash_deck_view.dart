@@ -4,6 +4,7 @@ import 'package:unipro/widgets/flash_card/flash_card.dart';
 import 'package:unipro/widgets/navigation_drawer/navigation_drawer.dart';
 
 class FlashDeckView extends StatelessWidget {
+  static const String route = '/deck';
   const FlashDeckView({Key key}) : super(key: key);
 
   @override

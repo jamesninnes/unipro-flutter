@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:unipro/widgets/navigation_bar/navbar_item.dart';
 
 class DrawerItem extends StatelessWidget {
   final String title;
@@ -16,7 +15,7 @@ class DrawerItem extends StatelessWidget {
           SizedBox(
             width: 30,
           ),
-          NavBarItem(title)
+          Text(title)
         ],
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unipro/constants/app_colors.dart';
-import 'package:unipro/views/landing/landing_view.dart';
+import 'package:unipro/views/login/login_view.dart';
 
 class CallToActionMobile extends StatelessWidget {
   final String title;
@@ -10,8 +10,7 @@ class CallToActionMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton(
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => LandingView()));
+          Navigator.of(context).pushNamed(LoginView.route);
         },
         child: Container(
           height: 60,

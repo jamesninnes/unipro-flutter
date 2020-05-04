@@ -19,24 +19,24 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  firebase_auth: ^0.16.0
+  responsive_builder: ^0.1.2
+  auto_size_text: ^2.1.0
+  google_sign_in: ^4.4.4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  responsive_builder: ^0.1.2
-  spear_menu: ^0.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
