@@ -10,23 +10,28 @@ class FlashDeck extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    BoxDecoration decoration = BoxDecoration();
     return Stack(alignment: Alignment.topLeft, children: <Widget>[
       Card(
         elevation: 4,
         margin: EdgeInsets.symmetric(vertical: 9, horizontal: 9),
         child: Container(
+          decoration: decoration,
           width: cardWidth,
           height: cardHeight,
         ),
       ),
       Card(
+        elevation: 3,
         margin: EdgeInsets.symmetric(vertical: 6, horizontal: 6),
         child: Container(
+          decoration: decoration,
           width: cardWidth,
           height: cardHeight,
         ),
       ),
       Card(
+        elevation: 2,
         margin: EdgeInsets.symmetric(vertical: 3, horizontal: 3),
         child: InkWell(
           splashColor: primaryColor.withAlpha(30),
@@ -35,6 +40,7 @@ class FlashDeck extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => FlashDeckView()));
           },
           child: Container(
+            decoration: decoration,
             width: cardWidth,
             height: cardHeight,
             child: Center(

@@ -34,14 +34,13 @@ class FlashDeckView extends StatelessWidget {
                     ),
                   ],
                 )
-                // Expanded(
-                //     child: ScreenTypeLayout(
-                //   mobile: LandingContentMobile(),
-                //   desktop: LandingContentDesktop(),
-                // ))
               ],
             ),
           )),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.print),
+          backgroundColor: primaryColor,
+          onPressed: () => {}),
     );
   }
 }
