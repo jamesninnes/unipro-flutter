@@ -11,11 +11,9 @@ class FlashDeckView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: primaryColor,
-        title: Text("UNIPRO"),
-        actions: <Widget>[Icon(Icons.person_outline)],
-      ),
-      drawer: NavigationDrawer(),
+          automaticallyImplyLeading: true,
+          backgroundColor: primaryColor,
+          title: Text("UNIPRO")),
       backgroundColor: Colors.white,
       body: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -27,6 +25,12 @@ class FlashDeckView extends StatelessWidget {
                   children: <Widget>[
                     FlashCard(
                       question: "Anticoagulants use hypertension?",
+                      answer: "Yes",
+                    ),
+                    FlashCard(
+                      question:
+                          "Regularly used as preferance to nitrate due to its increased ADR's",
+                      answer: "Panadol",
                     ),
                   ],
                 )

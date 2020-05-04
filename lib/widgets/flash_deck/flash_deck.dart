@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unipro/constants/app_colors.dart';
+import 'package:unipro/constants/card_dimensions.dart';
 import 'package:unipro/views/flash_deck/flash_deck_view.dart';
 
 class FlashDeck extends StatelessWidget {
@@ -14,15 +15,15 @@ class FlashDeck extends StatelessWidget {
         elevation: 4,
         margin: EdgeInsets.symmetric(vertical: 9, horizontal: 9),
         child: Container(
-          width: 250,
-          height: 200,
+          width: cardWidth,
+          height: cardHeight,
         ),
       ),
       Card(
         margin: EdgeInsets.symmetric(vertical: 6, horizontal: 6),
         child: Container(
-          width: 250,
-          height: 200,
+          width: cardWidth,
+          height: cardHeight,
         ),
       ),
       Card(
@@ -34,8 +35,8 @@ class FlashDeck extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => FlashDeckView()));
           },
           child: Container(
-            width: 250,
-            height: 200,
+            width: cardWidth,
+            height: cardHeight,
             child: Center(
               child: Stack(
                 alignment: Alignment.center,
