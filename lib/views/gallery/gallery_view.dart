@@ -1,13 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import 'package:unipro/constants/app_colors.dart';
 import 'package:unipro/views/login/login_view.dart';
-import 'package:unipro/widgets/admin_cards/edit_deck.dart';
-import 'package:unipro/widgets/admin_cards/new_deck.dart';
-import 'package:unipro/widgets/admin_cards/print_deck.dart';
 import 'package:unipro/widgets/flash_deck/flash_deck.dart';
+import 'package:unipro/widgets/flash_deck/new_deck_alert.dart';
 import 'package:unipro/widgets/navigation_drawer/navigation_drawer.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class GalleryView extends StatelessWidget {
   static const String route = '/gallery';
@@ -40,34 +38,47 @@ class GalleryView extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             alignment: Alignment.topCenter,
             child: SingleChildScrollView(
-              child: Column(
-                children: <Widget>[
-                  Wrap(
-                    children: <Widget>[
-                      FlashDeck(
-                        title: "3011",
-                        icon: Icons.local_hospital,
-                      ),
-                      FlashDeck(
-                        title: "3010",
-                        icon: Icons.local_hospital,
-                      ),
-                      FlashDeck(
-                        title: "2012",
-                        icon: Icons.local_hospital,
-                      ),
-                      FlashDeck(
-                        title: "3041",
-                        icon: Icons.local_hospital,
-                      )
-                    ],
-                  )
-                ],
+              child: StreamBuilder(
+                stream: Firestore.instance
+                    .collection('users')
+                    .document('YuJSBZcul9OSxUWmaujM3FHyIsQ2')
+                    .collection('decks')
+                    .snapshots(),
+                builder: (BuildContext context,
+                    AsyncSnapshot<QuerySnapshot> snapshot) {
+                  if (snapshot.hasError)
+                    return new Text('Error: ${snapshot.error}');
+                  switch (snapshot.connectionState) {
+                    case ConnectionState.waiting:
+                      return new Text('Loading...');
+                    default:
+                      return Column(
+                        children: <Widget>[
+                          Wrap(
+                            children: snapshot.data.documents
+                                .map((DocumentSnapshot document) {
+                              print(document.documentID);
+                              return new FlashDeck(
+                                title: document['name'],
+                                deckId: document.documentID,
+                              );
+                            }).toList(),
+                          )
+                        ],
+                      );
+                  }
+                },
               ),
             )),
         floatingActionButton: FloatingActionButton(
             child: Icon(Icons.add),
             backgroundColor: primaryColor,
-            onPressed: () => {}));
+            onPressed: () => {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return NewDeckAlert();
+                      })
+                }));
   }
 }

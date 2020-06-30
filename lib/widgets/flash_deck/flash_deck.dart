@@ -6,7 +6,9 @@ import 'package:unipro/views/flash_deck/flash_deck_view.dart';
 class FlashDeck extends StatelessWidget {
   final String title;
   final IconData icon;
-  const FlashDeck({Key key, this.title, this.icon}) : super(key: key);
+  final String deckId;
+  const FlashDeck({Key key, this.title, this.icon, this.deckId})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +38,10 @@ class FlashDeck extends StatelessWidget {
         child: InkWell(
           splashColor: primaryColor.withAlpha(30),
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => FlashDeckView()));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => FlashDeckView(deckId: deckId)));
           },
           child: Container(
             decoration: decoration,
